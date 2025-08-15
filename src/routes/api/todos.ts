@@ -1,11 +1,12 @@
 import type { Txid } from "@tanstack/electric-db-collection";
 import { json } from "@tanstack/react-start";
 import { createServerFileRoute } from "@tanstack/react-start/server";
+import type { TransactionSql } from "postgres";
 import { sql } from "../../db/postgres";
 import { validateInsertTodo } from "../../db/validation";
 
 // Generate a transaction ID
-async function generateTxId(tx: any): Promise<Txid> {
+async function generateTxId(tx: TransactionSql): Promise<Txid> {
 	// The ::xid cast strips off the epoch, giving you the raw 32-bit value
 	// that matches what PostgreSQL sends in logical replication streams
 	// (and then exposed through Electric which we'll match against

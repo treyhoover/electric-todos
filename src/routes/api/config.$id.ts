@@ -1,11 +1,12 @@
 import type { Txid } from "@tanstack/electric-db-collection";
 import { json } from "@tanstack/react-start";
 import { createServerFileRoute } from "@tanstack/react-start/server";
+import type { TransactionSql } from "postgres";
 import { sql } from "../../db/postgres";
 import { validateUpdateConfig } from "../../db/validation";
 
 // Generate a transaction ID
-async function generateTxId(tx: any): Promise<Txid> {
+async function generateTxId(tx: TransactionSql): Promise<Txid> {
 	const result = await tx`SELECT pg_current_xact_id()::xid::text as txid`;
 	const txid = result[0]?.txid;
 
