@@ -16,6 +16,7 @@ export default defineConfig({
       spa: {
         enabled: true,
       },
+      target: "netlify",
     }),
     react(),
   ],
