@@ -2,10 +2,9 @@ import type { KnipConfig } from 'knip'
 
 const config: KnipConfig = {
   entry: [
-    'src/main.tsx',
     'src/routes/**/*.{ts,tsx}',
-    'src/api/server.ts',
     'scripts/**/*.ts',
+    "src/router.tsx"
   ],
   project: [
     'src/**/*.{ts,tsx}',

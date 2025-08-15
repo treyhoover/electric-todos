@@ -21,17 +21,6 @@ export function NotFound() {
 							Go Home
 						</button>
 					</Link>
-
-					<div className="flex space-x-4">
-						<Link to="/electric" className="flex-1">
-							<button
-								type="button"
-								className="w-full px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors text-sm"
-							>
-								Electric Demo
-							</button>
-						</Link>
-					</div>
 				</div>
 			</div>
 		</div>
