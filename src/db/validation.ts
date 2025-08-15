@@ -40,10 +40,6 @@ export const validateInsertTodo = (data: unknown): InsertTodo => {
   return parsed
 }
 
-const validateSelectTodo = (data: unknown): SelectTodo => {
-  return selectTodoSchema.parse(data)
-}
-
 export const validateUpdateTodo = (data: unknown): UpdateTodo => {
   return updateTodoSchema.parse(data)
 }
@@ -52,35 +48,6 @@ export const validateInsertConfig = (data: unknown): InsertConfig => {
   return insertConfigSchema.parse(data)
 }
 
-const validateSelectConfig = (data: unknown): SelectConfig => {
-  return selectConfigSchema.parse(data)
-}
-
 export const validateUpdateConfig = (data: unknown): UpdateConfig => {
   return updateConfigSchema.parse(data)
-}
-
-// Safe parsing functions that return Result type instead of throwing
-const safeParseInsertTodo = (data: unknown) => {
-  return insertTodoSchema.safeParse(data)
-}
-
-const safeParseSelectTodo = (data: unknown) => {
-  return selectTodoSchema.safeParse(data)
-}
-
-const safeParseUpdateTodo = (data: unknown) => {
-  return updateTodoSchema.safeParse(data)
-}
-
-const safeParseInsertConfig = (data: unknown) => {
-  return insertConfigSchema.safeParse(data)
-}
-
-const safeParseSelectConfig = (data: unknown) => {
-  return selectConfigSchema.safeParse(data)
-}
-
-const safeParseUpdateConfig = (data: unknown) => {
-  return updateConfigSchema.safeParse(data)
 }

@@ -1,52 +1,43 @@
-import { Link, createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router"
+import { useLiveQuery } from "@tanstack/react-db"
+import {
+  electricConfigCollection,
+  electricTodoCollection,
+} from "../lib/collections"
+import { TodoApp } from "../components/TodoApp"
 
 export const Route = createFileRoute(`/`)({
-	component: HomePage,
-});
+  component: ElectricPage,
+  ssr: false,
+  loader: async () => {
+    await Promise.all([
+      electricTodoCollection.preload(),
+      electricConfigCollection.preload(),
+    ])
 
-function HomePage() {
-	return (
-		<div className="min-h-screen flex items-center justify-center bg-gray-50">
-			<div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8">
-				<h1 className="text-3xl font-bold text-center mb-8 text-gray-800">
-					TanStack React DB Demo
-				</h1>
+    return null
+  },
+})
 
-				<p className="text-gray-600 text-center mb-8">
-					Choose a collection type to see how TanStack React DB works with
-					different data sources:
-				</p>
+function ElectricPage() {
+  // Get data using live queries with Electric collections
+  const { data: todos } = useLiveQuery((q) =>
+    q
+      .from({ todo: electricTodoCollection })
+      .orderBy(({ todo }) => todo.created_at, `asc`)
+  )
 
-				<div className="space-y-4">
-					<Link to="/query" className="block w-full">
-						<button
-							type="button"
-							className="w-full px-6 py-4 bg-green-700 text-white rounded-lg hover:bg-green-800 transition-colors text-left"
-						>
-							<div className="font-semibold">Query Collections</div>
-							<div className="text-sm opacity-90 mt-1">
-								Traditional polling with TanStack Query
-							</div>
-						</button>
-					</Link>
-					<Link to="/electric" className="block w-full">
-						<button
-							type="button"
-							className="w-full px-6 py-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-left"
-						>
-							<div className="font-semibold">Electric Collections</div>
-							<div className="text-sm opacity-90 mt-1">
-								Real-time sync with ElectricSQL
-							</div>
-						</button>
-					</Link>
-				</div>
+  const { data: configData } = useLiveQuery((q) =>
+    q.from({ config: electricConfigCollection })
+  )
 
-				<div className="mt-8 text-xs text-center text-gray-500">
-					All examples use the same API and UI components, showcasing the
-					unified interface of TanStack React DB.
-				</div>
-			</div>
-		</div>
-	);
+  return (
+    <TodoApp
+      todos={todos}
+      configData={configData}
+      todoCollection={electricTodoCollection}
+      configCollection={electricConfigCollection}
+      title="todos (electric)"
+    />
+  )
 }

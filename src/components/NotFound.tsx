@@ -23,14 +23,6 @@ export function NotFound() {
 					</Link>
 
 					<div className="flex space-x-4">
-						<Link to="/query" className="flex-1">
-							<button
-								type="button"
-								className="w-full px-4 py-2 bg-green-100 text-green-700 rounded-lg hover:bg-green-200 transition-colors text-sm"
-							>
-								Query Demo
-							</button>
-						</Link>
 						<Link to="/electric" className="flex-1">
 							<button
 								type="button"

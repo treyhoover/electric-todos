@@ -11,8 +11,6 @@
 import { createServerRootRoute } from '@tanstack/react-start/server'
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as QueryRouteImport } from './routes/query'
-import { Route as ElectricRouteImport } from './routes/electric'
 import { Route as IndexRouteImport } from './routes/index'
 import { ServerRoute as ApiTodosServerRouteImport } from './routes/api/todos'
 import { ServerRoute as ApiConfigServerRouteImport } from './routes/api/config'
@@ -21,16 +19,6 @@ import { ServerRoute as ApiConfigIdServerRouteImport } from './routes/api/config
 
 const rootServerRouteImport = createServerRootRoute()
 
-const QueryRoute = QueryRouteImport.update({
-  id: '/query',
-  path: '/query',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ElectricRoute = ElectricRouteImport.update({
-  id: '/electric',
-  path: '/electric',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -59,32 +47,24 @@ const ApiConfigIdServerRoute = ApiConfigIdServerRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/electric': typeof ElectricRoute
-  '/query': typeof QueryRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/electric': typeof ElectricRoute
-  '/query': typeof QueryRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/electric': typeof ElectricRoute
-  '/query': typeof QueryRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/electric' | '/query'
+  fullPaths: '/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/electric' | '/query'
-  id: '__root__' | '/' | '/electric' | '/query'
+  to: '/'
+  id: '__root__' | '/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ElectricRoute: typeof ElectricRoute
-  QueryRoute: typeof QueryRoute
 }
 export interface FileServerRoutesByFullPath {
   '/api/config': typeof ApiConfigServerRouteWithChildren
@@ -125,20 +105,6 @@ export interface RootServerRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/query': {
-      id: '/query'
-      path: '/query'
-      fullPath: '/query'
-      preLoaderRoute: typeof QueryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/electric': {
-      id: '/electric'
-      path: '/electric'
-      fullPath: '/electric'
-      preLoaderRoute: typeof ElectricRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -207,8 +173,6 @@ const ApiTodosServerRouteWithChildren = ApiTodosServerRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ElectricRoute: ElectricRoute,
-  QueryRoute: QueryRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

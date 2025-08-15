@@ -94,8 +94,6 @@ export function TodoApp({
 					{title}
 				</h1>
 
-				<Navigation />
-
 				<div className="py-4 flex justify-end">
 					<div className="flex items-center">
 						<label
@@ -163,11 +161,13 @@ export function TodoApp({
 										className="absolute left-[12px] size-[40px] cursor-pointer"
 									/>
 									<label
+										htmlFor={`todo-${todo.id}`}
 										className={`block p-[15px] text-2xl transition-colors ${todo.completed ? `text-[#d9d9d9] line-through` : ``}`}
 									>
 										{todo.text}
 									</label>
 									<button
+										type="button"
 										onClick={() => todoCollection.delete(todo.id)}
 										className="hidden group-hover:block absolute right-[20px] text-[30px] text-[#cc9a9a] hover:text-[#af5b5e] transition-colors"
 									>
@@ -185,6 +185,7 @@ export function TodoApp({
 
 						{completedTodos.length > 0 && (
 							<button
+								type="button"
 								onClick={() =>
 									todoCollection.delete(completedTodos.map((todo) => todo.id))
 								}
@@ -197,27 +198,5 @@ export function TodoApp({
 				</div>
 			</div>
 		</main>
-	);
-}
-
-function Navigation() {
-	const style = `px-4 py-2 text-white rounded transition-colors`;
-	const links = [
-		[`/query`, `Query`, `bg-green-700 hover:bg-green-800`],
-		[`/electric`, `Electric`, `bg-blue-500 hover:bg-blue-600`],
-	];
-
-	return (
-		<nav className="flex justify-center gap-4 mb-4">
-			<Link to="/" className={`${style} bg-gray-500 hover:bg-gray-600`}>
-				← Home
-			</Link>
-
-			{links.map(([href, name, cls]) => (
-				<Link key={href} to={href} className={`${style} ${cls}`}>
-					{name}
-				</Link>
-			))}
-		</nav>
 	);
 }
