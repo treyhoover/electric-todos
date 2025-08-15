@@ -44,7 +44,7 @@
 		"lint": "biome check .",
 		"preview": "vite preview",
 		"check-types": "tsc --noEmit",
-		"check:fix": "pnpm check-types && pnpm lint:fix"
+		"check:fix": "pnpm check-types && pnpm lint:fix && pnpm knip"
 	},
 	"type": "module"
 }

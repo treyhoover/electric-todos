@@ -1,4 +1,4 @@
-import type { SelectConfig, SelectTodo } from "../db/validation";
+import type { SelectConfig, SelectTodo } from "@/db/validation";
 
 // API helper for todos and config
 const API_BASE_URL = "/api";

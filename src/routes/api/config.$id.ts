@@ -1,21 +1,25 @@
-import type { Txid } from "@tanstack/electric-db-collection";
 import { json } from "@tanstack/react-start";
 import { createServerFileRoute } from "@tanstack/react-start/server";
-import { sql } from "../../db/postgres";
-import { generateTxId } from "../../db/utils";
-import { validateUpdateConfig } from "../../db/validation";
+import { eq } from "drizzle-orm";
+import { db } from "@/db/drizzle";
+import { config } from "@/db/schema";
+import { generateTxId } from "@/db/utils";
+import { validateUpdateConfig } from "@/db/validation";
 
 export const ServerRoute = createServerFileRoute("/api/config/$id").methods({
 	GET: async ({ params }) => {
 		try {
 			const { id } = params;
-			const [config] = await sql`SELECT * FROM config WHERE id = ${id}`;
+			const [result] = await db
+				.select()
+				.from(config)
+				.where(eq(config.id, Number.parseInt(id, 10)));
 
-			if (!config) {
+			if (!result) {
 				return json({ error: "Config not found" }, { status: 404 });
 			}
 
-			return json(config);
+			return json(result);
 		} catch (error) {
 			console.error("Error fetching config:", error);
 			return json(
@@ -33,25 +37,23 @@ export const ServerRoute = createServerFileRoute("/api/config/$id").methods({
 			const body = await request.json();
 			const configData = validateUpdateConfig(body);
 
-			let txid!: Txid;
-			const updatedConfig = await sql.begin(async (tx) => {
-				txid = await generateTxId(tx);
+			const result = await db.transaction(async (tx) => {
+				const txid = await generateTxId(tx);
 
-				const [result] = await tx`
-          UPDATE config
-          SET ${tx(configData)}
-          WHERE id = ${id}
-          RETURNING *
-        `;
+				const [updatedConfig] = await tx
+					.update(config)
+					.set(configData)
+					.where(eq(config.id, Number.parseInt(id, 10)))
+					.returning();
 
-				if (!result) {
+				if (!updatedConfig) {
 					throw new Error("Config not found");
 				}
 
-				return result;
+				return { config: updatedConfig, txid };
 			});
 
-			return json({ config: updatedConfig, txid });
+			return json(result);
 		} catch (error) {
 			if (error instanceof Error && error.message === "Config not found") {
 				return json({ error: "Config not found" }, { status: 404 });
@@ -71,22 +73,22 @@ export const ServerRoute = createServerFileRoute("/api/config/$id").methods({
 		try {
 			const { id } = params;
 
-			let txid!: Txid;
-			await sql.begin(async (tx) => {
-				txid = await generateTxId(tx);
+			const result = await db.transaction(async (tx) => {
+				const txid = await generateTxId(tx);
 
-				const [result] = await tx`
-          DELETE FROM config
-          WHERE id = ${id}
-          RETURNING id
-        `;
+				const [deleted] = await tx
+					.delete(config)
+					.where(eq(config.id, Number.parseInt(id, 10)))
+					.returning({ id: config.id });
 
-				if (!result) {
+				if (!deleted) {
 					throw new Error("Config not found");
 				}
+
+				return { success: true, txid };
 			});
 
-			return json({ success: true, txid });
+			return json(result);
 		} catch (error) {
 			if (error instanceof Error && error.message === "Config not found") {
 				return json({ error: "Config not found" }, { status: 404 });

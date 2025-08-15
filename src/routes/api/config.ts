@@ -1,15 +1,15 @@
-import type { Txid } from "@tanstack/electric-db-collection";
 import { json } from "@tanstack/react-start";
 import { createServerFileRoute } from "@tanstack/react-start/server";
-import { sql } from "../../db/postgres";
-import { generateTxId } from "../../db/utils";
-import { validateInsertConfig } from "../../db/validation";
+import { db } from "@/db/drizzle";
+import { config } from "@/db/schema";
+import { generateTxId } from "@/db/utils";
+import { validateInsertConfig } from "@/db/validation";
 
 export const ServerRoute = createServerFileRoute("/api/config").methods({
 	GET: async ({ request: _request }) => {
 		try {
-			const config = await sql`SELECT * FROM config`;
-			return json(config);
+			const result = await db.select().from(config);
+			return json(result);
 		} catch (error) {
 			console.error("Error fetching config:", error);
 			return json(
@@ -27,18 +27,19 @@ export const ServerRoute = createServerFileRoute("/api/config").methods({
 			console.log("POST /api/config", body);
 			const configData = validateInsertConfig(body);
 
-			let txid!: Txid;
-			const newConfig = await sql.begin(async (tx) => {
-				txid = await generateTxId(tx);
-
-				const [result] = await tx`
-          INSERT INTO config ${tx(configData)}
-          RETURNING *
-        `;
-				return result;
+			const result = await db.transaction(async (tx) => {
+				const txid = await generateTxId(tx);
+				const [newConfig] = await tx
+					.insert(config)
+					.values(configData)
+					.returning();
+				if (!newConfig) {
+					throw new Error("Failed to create config");
+				}
+				return { config: newConfig, txid };
 			});
 
-			return json({ config: newConfig, txid }, { status: 201 });
+			return json(result, { status: 201 });
 		} catch (error) {
 			console.error("Error creating config:", error);
 			return json(

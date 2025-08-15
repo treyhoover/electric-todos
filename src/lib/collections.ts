@@ -1,6 +1,6 @@
 import { electricCollectionOptions } from "@tanstack/electric-db-collection";
 import { createCollection } from "@tanstack/react-db";
-import { selectConfigSchema, selectTodoSchema } from "../db/validation";
+import { selectConfigSchema, selectTodoSchema } from "@/db/validation";
 import { api } from "./api";
 
 // Electric Todo Collection
