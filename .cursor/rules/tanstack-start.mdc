@@ -1,0 +1,1964 @@
+---
+description: When working with tanstack, routes, pending/error states, etc.
+alwaysApply: false
+---
+========================
+CODE SNIPPETS
+========================
+TITLE: Manual Deployment: Clone and Run Any TanStack Start Example
+DESCRIPTION: Outlines the steps to manually clone a specific TanStack Router example by replacing 'EXAMPLE_SLUG' with the desired example's identifier. It then guides the user to navigate into the new project directory, install dependencies, and start the development server, allowing for flexible deployment of any example.
+
+SOURCE: https://tanstack.com/start/latest/start/latest/docs/framework/react/quick-start
+
+LANGUAGE: bash
+CODE:
+```
+npx gitpick TanStack/router/tree/main/examples/react/EXAMPLE_SLUG my-new-project
+cd my-new-project
+npm install
+npm run dev
+```
+
+----------------------------------------
+
+TITLE: Quick Start: Clone and Run Basic TanStack Start Example
+DESCRIPTION: Provides commands to quickly clone the 'start-basic' example of TanStack Router, navigate into its directory, install project dependencies, and launch the development server. This is the fastest way to get a working TanStack Start application running locally.
+
+SOURCE: https://tanstack.com/start/latest/start/latest/docs/framework/react/quick-start
+
+LANGUAGE: bash
+CODE:
+```
+npx gitpick TanStack/router/tree/main/examples/react/start-basic start-basic
+cd start-basic
+npm install
+npm run dev
+```
+
+----------------------------------------
+
+TITLE: Clone and Run Basic TanStack Start Example
+DESCRIPTION: Provides the necessary bash commands to quickly clone the 'start-basic' example of TanStack Start, install its dependencies, and start the development server for local testing.
+
+SOURCE: https://tanstack.com/start/latest/start/latest/docs/framework/solid/quick-start
+
+LANGUAGE: bash
+CODE:
+```
+npx degit https://github.com/tanstack/router/examples/solid/start-basic start-basic
+cd start-basic
+npm install
+npm run dev
+```
+
+----------------------------------------
+
+TITLE: Manually Clone and Deploy Generic TanStack Start Example
+DESCRIPTION: Outlines the bash commands for manually cloning and deploying any TanStack Start example. Users need to replace 'EXAMPLE_SLUG' with the specific example's identifier, followed by installing dependencies and running the development server.
+
+SOURCE: https://tanstack.com/start/latest/start/latest/docs/framework/solid/quick-start
+
+LANGUAGE: bash
+CODE:
+```
+npx degit https://github.com/tanstack/router/examples/solid/EXAMPLE_SLUG my-new-project
+cd my-new-project
+npm install
+npm run dev
+```
+
+----------------------------------------
+
+TITLE: Setup and Run TanStack Query Svelte Star Wars Example
+DESCRIPTION: This snippet provides the necessary steps to set up and run the TanStack Query Star Wars example for Svelte locally. It includes commands for installing project dependencies and starting the development server.
+
+SOURCE: https://tanstack.com/start/latest/query/v5/docs/framework/svelte/examples/star-wars
+
+LANGUAGE: Markdown
+CODE:
+```
+# Example
+
+This example is a rewrite of the React Query star-wars example.
+
+To run this example:
+
+- `npm install`
+- `npm run dev`
+```
+
+----------------------------------------
+
+TITLE: Start Svelte development server
+DESCRIPTION: Commands to start the development server for a Svelte project after installing dependencies. An option is available to automatically open the application in a new browser tab.
+
+SOURCE: https://tanstack.com/start/latest/query/v4/docs/framework/svelte/examples/basic
+
+LANGUAGE: bash
+CODE:
+```
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
+
+----------------------------------------
+
+TITLE: Develop Svelte Project Locally
+DESCRIPTION: Commands to start a local development server for a Svelte project after installing dependencies, including an option to automatically open the app in a new browser tab.
+
+SOURCE: https://tanstack.com/start/latest/query/latest/docs/framework/svelte/examples/basic
+
+LANGUAGE: bash
+CODE:
+```
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
+
+----------------------------------------
+
+TITLE: Build Svelte project for production
+DESCRIPTION: Command to create a production-ready build of your Svelte application. After building, you can preview the production build locally. Deployment may require installing an adapter.
+
+SOURCE: https://tanstack.com/start/latest/query/v4/docs/framework/svelte/examples/basic
+
+LANGUAGE: bash
+CODE:
+```
+npm run build
+```
+
+----------------------------------------
+
+TITLE: Run Svelte Star Wars Example Locally
+DESCRIPTION: This snippet provides the necessary command-line instructions to install project dependencies and start the development server for the Svelte Star Wars example application.
+
+SOURCE: https://tanstack.com/start/latest/query/v4/docs/framework/svelte/examples/star-wars
+
+LANGUAGE: Shell
+CODE:
+```
+npm install
+npm run dev
+```
+
+----------------------------------------
+
+TITLE: Develop a Svelte Application
+DESCRIPTION: Start the development server for your Svelte project. After installing dependencies, this command compiles your Svelte components and serves the application, with an option to automatically open it in a new browser tab for live development.
+
+SOURCE: https://tanstack.com/start/latest/query/latest/docs/framework/svelte/examples/ssr
+
+LANGUAGE: bash
+CODE:
+```
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
+
+----------------------------------------
+
+TITLE: Install TanStack Start Core Dependencies
+DESCRIPTION: This command installs the primary dependencies required for a TanStack Start application. It includes `@tanstack/solid-start` for the framework, `@tanstack/solid-router` for routing, and `vite` as the build tool.
+
+SOURCE: https://tanstack.com/start/latest/start/latest/docs/framework/solid/build-from-scratch
+
+LANGUAGE: shell
+CODE:
+```
+npm i @tanstack/solid-start @tanstack/solid-router vite
+```
+
+----------------------------------------
+
+TITLE: TanStack Table Qwik Example: Basic Table Setup
+DESCRIPTION: A basic example demonstrating the fundamental setup and usage of TanStack Table with the Qwik framework.
+
+SOURCE: https://tanstack.com/start/latest/table/latest/docs/framework/qwik/examples/row-selection
+
+LANGUAGE: APIDOC
+CODE:
+```
+Basic Table Example (Qwik):
+  Purpose: Illustrates minimal table setup.
+  Framework: Qwik.
+```
+
+----------------------------------------
+
+TITLE: Install Dependencies and Start Development Server
+DESCRIPTION: Install all required project dependencies using pnpm and then launch the development server for local testing and development.
+
+SOURCE: https://tanstack.com/start/latest/start/latest/docs/framework/react/reading-writing-file
+
+LANGUAGE: bash
+CODE:
+```
+pnpm i
+pnpm dev
+```
+
+----------------------------------------
+
+TITLE: Install TanStack Router with Deno
+DESCRIPTION: Uses the `deno add` command to install necessary TanStack Router packages, including the SolidJS adapter, the router plugin, and devtools, from npm.
+
+SOURCE: https://tanstack.com/start/latest/router/latest/docs/framework/solid/quick-start
+
+LANGUAGE: deno
+CODE:
+```
+deno add npm:@tanstack/solid-router npm:@tanstack/router-plugin npm:@tanstack/solid-router-devtools
+```
+
+----------------------------------------
+
+TITLE: Install Core TanStack Start Dependencies
+DESCRIPTION: This command installs the essential runtime dependencies for a TanStack Start application, including the TanStack Start React package, TanStack Router, and Vite.
+
+SOURCE: https://tanstack.com/start/latest/start/latest/docs/framework/react/build-from-scratch
+
+LANGUAGE: shell
+CODE:
+```
+npm i @tanstack/react-start @tanstack/react-router vite
+```
+
+----------------------------------------
+
+TITLE: Install Solid.js for TanStack Start
+DESCRIPTION: This command installs `solid-js`, the reactive JavaScript library that TanStack Start leverages for building user interfaces. It is a fundamental dependency for rendering components in the application.
+
+SOURCE: https://tanstack.com/start/latest/start/latest/docs/framework/solid/build-from-scratch
+
+LANGUAGE: shell
+CODE:
+```
+npm i solid-js
+```
+
+----------------------------------------
+
+TITLE: Start Svelte Development Server
+DESCRIPTION: After installing dependencies, run `npm run dev` to start the local development server. An optional flag `--open` can automatically launch the application in your browser.
+
+SOURCE: https://tanstack.com/start/latest/query/v4/docs/framework/svelte/examples/auto-refetching
+
+LANGUAGE: bash
+CODE:
+```
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
+
+----------------------------------------
+
+TITLE: Start Svelte development server
+DESCRIPTION: Run the Svelte development server after installing dependencies, with an option to automatically open the application in a web browser.
+
+SOURCE: https://tanstack.com/start/latest/query/v5/docs/framework/svelte/examples/auto-refetching
+
+LANGUAGE: bash
+CODE:
+```
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
+
+----------------------------------------
+
+TITLE: Solid Start Home Page Component with Solid Query v5
+DESCRIPTION: This SolidJS component defines the main home page for the Solid Start streaming demo. It displays a title and a paragraph explaining that the demo showcases Solid Query v5's SSR and streaming capabilities, guiding users to navigate through the various examples.
+
+SOURCE: https://tanstack.com/start/latest/query/v5/docs/framework/solid/examples/solid-start-streaming
+
+LANGUAGE: tsx
+CODE:
+```
+import { Title } from '@solidjs/meta'
+
+export default function Home() {
+  return (
+    <main>
+      <Title>Solid Query v5</Title>
+
+      <h1>Solid Query v5</h1>
+
+      <p>
+        This demo demonstrates how Solid Query can be used in SSR, with
+        streaming support. Use the links in the top left to navigate between the
+        various examples.
+      </p>
+    </main>
+  )
+}
+```
+
+----------------------------------------
+
+TITLE: Basic TanStack Form Setup with Solid.js
+DESCRIPTION: This example demonstrates the bare minimum to get started with TanStack Form in a Solid.js application. It shows how to create a form instance using `createForm` with a default value and an `onSubmit` handler, and how to render a form field using `form.Field` for a simple text input. Note that this snippet does not include validation or error handling.
+
+SOURCE: https://tanstack.com/start/latest/form/v1/docs/framework/solid/quick-start
+
+LANGUAGE: tsx
+CODE:
+```
+import { createForm } from '@tanstack/solid-form'
+
+function App() {
+  const form = createForm(() => ({
+    defaultValues: {
+      fullName: '',
+    },
+    onSubmit: async ({ value }) => {
+      // Do something with form data
+      console.log(value)
+    },
+  }))
+
+  return (
+    <div>
+      <h1>Simple Form Example</h1>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault()
+          e.stopPropagation()
+          form.handleSubmit()
+        }}
+      >
+        <div>
+          <form.Field
+            name="fullName"
+            children={(field) => (
+              <input
+                name={field().name}
+                value={field().state.value}
+                onBlur={field().handleBlur}
+                onInput={(e) => field().handleChange(e.target.value)}
+              />
+            )}
+          />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  )
+}
+```
+
+----------------------------------------
+
+TITLE: Install Core TanStack Start Dependencies
+DESCRIPTION: Installs the primary packages required for a TanStack Start application, including the framework itself, TanStack Router, and Vite for development and building.
+
+SOURCE: https://tanstack.com/start/latest/router/latest/docs/framework/react/guide/tanstack-start
+
+LANGUAGE: shell
+CODE:
+```
+npm i @tanstack/react-start @tanstack/react-router vite
+```
+
+----------------------------------------
+
+TITLE: TanStack Start Project File Structure
+DESCRIPTION: This snippet illustrates the expected file and directory structure for a basic TanStack Start project after initial setup. It highlights key configuration files and the `src` directory containing application routes and router configuration.
+
+SOURCE: https://tanstack.com/start/latest/start/latest/docs/framework/solid/build-from-scratch
+
+LANGUAGE: text
+CODE:
+```
+.
+├── src/
+│   ├── routes/
+│   │   └── `__root.tsx`
+│   ├── `router.tsx`
+│   ├── `routeTree.gen.ts`
+├── `.gitignore`
+├── `vite.config.ts`
+├── `package.json`
+└── `tsconfig.json`
+```
+
+----------------------------------------
+
+TITLE: TanStack Start Project File Structure
+DESCRIPTION: This snippet illustrates the expected directory and file structure for a basic TanStack Start project after initial setup, highlighting key configuration and source files.
+
+SOURCE: https://tanstack.com/start/latest/start/latest/docs/framework/react/build-from-scratch
+
+LANGUAGE: text
+CODE:
+```
+.
+├── src/
+│   ├── routes/
+│   │   └── `__root.tsx`
+│   ├── `router.tsx`
+│   ├── `routeTree.gen.ts`
+├── `.gitignore`
+├── `vite.config.ts`
+├── `package.json`
+└── `tsconfig.json`
+```
+
+----------------------------------------
+
+TITLE: Install React and ReactDOM
+DESCRIPTION: This command installs React and ReactDOM, which are fundamental peer dependencies required for building user interfaces with TanStack Start.
+
+SOURCE: https://tanstack.com/start/latest/start/latest/docs/framework/react/build-from-scratch
+
+LANGUAGE: shell
+CODE:
+```
+npm i react react-dom
+```
+
+----------------------------------------
+
+TITLE: Start Svelte Development Server
+DESCRIPTION: Commands to start the development server for a Svelte project after dependencies are installed, with an option to automatically open the app in a new browser tab.
+
+SOURCE: https://tanstack.com/start/latest/query/v4/docs/framework/svelte/examples/ssr
+
+LANGUAGE: bash
+CODE:
+```
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
+
+----------------------------------------
+
+TITLE: Nuxt 3 Project Setup and Development Commands
+DESCRIPTION: Provides essential `yarn` commands for initializing, running, and building a minimal Nuxt 3 application. This includes installing dependencies, starting the development server, and compiling for production deployment.
+
+SOURCE: https://tanstack.com/start/latest/query/v5/docs/framework/vue/examples/nuxt3
+
+LANGUAGE: bash
+CODE:
+```
+yarn install
+yarn dev
+yarn build
+```
+
+LANGUAGE: bash
+CODE:
+```
+yarn install
+yarn dev
+```
+
+----------------------------------------
+
+TITLE: Svelte Project Setup and Build Commands
+DESCRIPTION: Commands for creating a new Svelte project, running the development server, and building the application for production using `npm` and `create-svelte`.
+
+SOURCE: https://tanstack.com/start/latest/query/v5/docs/framework/svelte/examples/basic
+
+LANGUAGE: bash
+CODE:
+```
+# create a new project in the current directory
+npm create svelte@latest
+
+# create a new project in my-app
+npm create svelte@latest my-app
+
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+
+npm run build
+```
+
+----------------------------------------
+
+TITLE: TanStack Start Root Route and Clerk Authentication Setup
+DESCRIPTION: This code defines the main application entry point (root route) for a TanStack Start project. It integrates Clerk for authentication by fetching user ID on the server, provides a global HTML document structure with navigation, and includes Clerk's SignInButton, SignedIn, SignedOut, and UserButton components. It also sets up meta tags, stylesheets, favicons, and handles error/not-found states.
+
+SOURCE: https://tanstack.com/start/latest/start/latest/docs/framework/react/examples/start-clerk-basic
+
+LANGUAGE: TypeScript
+CODE:
+```
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/tanstack-react-start'
+import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+import { createServerFn } from '@tanstack/react-start'
+import * as React from 'react'
+import { getAuth } from '@clerk/tanstack-react-start/server'
+import { getWebRequest } from '@tanstack/react-start/server'
+import { DefaultCatchBoundary } from '~/components/DefaultCatchBoundary.js'
+import { NotFound } from '~/components/NotFound.js'
+import appCss from '~/styles/app.css?url'
+
+const fetchClerkAuth = createServerFn({ method: 'GET' }).handler(async () => {
+  const { userId } = await getAuth(getWebRequest()!)
+
+  return {
+    userId,
+  }
+})
+
+export const Route = createRootRoute({
+  head: () => ({
+    meta: [
+      {
+        charSet: 'utf-8',
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1',
+      },
+    ],
+    links: [
+      { rel: 'stylesheet', href: appCss },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/apple-touch-icon.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        href: '/favicon-32x32.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        href: '/favicon-16x16.png',
+      },
+      { rel: 'manifest', href: '/site.webmanifest', color: '#fffff' },
+      { rel: 'icon', href: '/favicon.ico' },
+    ],
+  }),
+  beforeLoad: async () => {
+    const { userId } = await fetchClerkAuth()
+
+    return {
+      userId,
+    }
+  },
+  errorComponent: (props) => {
+    return (
+      <RootDocument>
+        <DefaultCatchBoundary {...props} />
+      </RootDocument>
+    )
+  },
+  notFoundComponent: () => <NotFound />,
+  component: RootComponent,
+})
+
+function RootComponent() {
+  return (
+    <ClerkProvider>
+      <RootDocument>
+        <Outlet />
+      </RootDocument>
+    </ClerkProvider>
+  )
+}
+
+function RootDocument({ children }: { children: React.ReactNode }) {
+  return (
+    <html>
+      <head>
+        <HeadContent />
+      </head>
+      <body>
+        <div className="p-2 flex gap-2 text-lg">
+          <Link
+            to="/"
+            activeProps={{
+              className: 'font-bold',
+            }}
+            activeOptions={{ exact: true }}
+          >
+            Home
+          </Link>{' '}
+          <Link
+            to="/posts"
+            activeProps={{
+              className: 'font-bold',
+            }}
+          >
+            Posts
+          </Link>
+          <div className="ml-auto">
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+            <SignedOut>
+              <SignInButton mode="modal" />
+            </SignedOut>
+          </div>
+        </div>
+        <hr />
+        {children}
+        <TanStackRouterDevtools position="bottom-right" />
+        <Scripts />
+      </body>
+    </html>
+  )
+}
+```
+
+----------------------------------------
+
+TITLE: Quick Start with TanStack Form in Vue
+DESCRIPTION: This snippet demonstrates the bare minimum to get started with TanStack Form in a Vue application. It shows how to initialize a form with `useForm` and render a basic input field using `form.Field`. This example focuses on basic setup and does not include validation or error handling.
+
+SOURCE: https://tanstack.com/start/latest/form/latest/docs/framework/vue/quick-start
+
+LANGUAGE: vue
+CODE:
+```
+<!-- App.vue -->
+<script setup>
+import { useForm } from '@tanstack/vue-form'
+
+const form = useForm({
+  defaultValues: {
+    fullName: '',
+  },
+  onSubmit: async ({ value }) => {
+    // Do something with form data
+    console.log(value)
+  },
+})
+</script>
+
+<template>
+  <div>
+    <form @submit.prevent.stop="form.handleSubmit">
+      <div>
+        <form.Field name="fullName">
+          <template v-slot="{ field }">
+            <input
+              :name="field.name"
+              :value="field.state.value"
+              @blur="field.handleBlur"
+              @input="(e) => field.handleChange((e.target as HTMLInputElement).value)"
+            />
+          </template>
+        </form.Field>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</template>
+```
+
+----------------------------------------
+
+TITLE: Install Core TanStack Start and Router Dependencies
+DESCRIPTION: Installs the alpha versions of `@tanstack/react-router`, `@tanstack/react-start`, and `vite`, which are essential for setting up a new TanStack Start project.
+
+SOURCE: https://tanstack.com/start/latest/start/latest/docs/framework/react/migrate-from-next-js
+
+LANGUAGE: sh
+CODE:
+```
+npm i @tanstack/react-router@alpha @tanstack/react-start@alpha vite
+```
+
+----------------------------------------
+
+TITLE: Start Svelte development server
+DESCRIPTION: Commands to start the development server for a Svelte project after dependencies are installed. Includes options to open the app in a new browser tab.
+
+SOURCE: https://tanstack.com/start/latest/query/v5/docs/framework/svelte/examples/load-more-infinite-scroll
+
+LANGUAGE: bash
+CODE:
+```
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
+
+----------------------------------------
+
+TITLE: Install TanStack Router and Devtools Manually for Solid.js
+DESCRIPTION: Manually add the core TanStack Router library, Solid.js integration, the Vite plugin for router, and the router devtools to an existing project. This snippet provides installation commands for npm, pnpm, yarn, bun, and deno.
+
+SOURCE: https://tanstack.com/start/latest/router/latest/docs/framework/solid/quick-start
+
+LANGUAGE: sh
+CODE:
+```
+npm install @tanstack/solid-router @tanstack/solid-router-devtools
+npm install -D @tanstack/router-plugin
+```
+
+LANGUAGE: sh
+CODE:
+```
+pnpm add @tanstack/solid-router @tanstack/solid-router-devtools
+pnpm add -D @tanstack/router-plugin
+```
+
+LANGUAGE: sh
+CODE:
+```
+yarn add @tanstack/solid-router @tanstack/solid-router-devtools
+yarn add -D @tanstack/router-plugin
+```
+
+LANGUAGE: sh
+CODE:
+```
+bun add @tanstack/solid-router @tanstack/solid-router-devtools
+bun add -D @tanstack/router-plugin
+```
+
+LANGUAGE: sh
+CODE:
+```
+deno add npm:@tanstack/solid-router npm:@tanstack/router-plugin npm:@tanstack/solid-router-devtools
+```
+
+----------------------------------------
+
+TITLE: Solid Query App Setup with QueryClientProvider and Toggle Button
+DESCRIPTION: This SolidJS snippet illustrates the basic application structure using `QueryClientProvider` to wrap the application. It also shows a button within a component (likely `Example`) that toggles a reactive state variable `enabled`, which would typically control a query's enabled state, demonstrating fundamental asynchronous state management.
+
+SOURCE: https://tanstack.com/start/latest/query/v5/docs/framework/solid/quick-start
+
+LANGUAGE: SolidJS
+CODE:
+```
+        </Match>
+      </Switch>
+      <button onClick={() => setEnabled(!enabled())}>Toggle enabled</button>
+    </div>
+  )
+}
+
+function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Example />
+    </QueryClientProvider>
+  )
+}
+```
+
+----------------------------------------
+
+TITLE: Build Svelte Project for Production
+DESCRIPTION: Command to create a production-ready build of a Svelte application. The build can be previewed using `npm run preview`.
+
+SOURCE: https://tanstack.com/start/latest/query/latest/docs/framework/svelte/examples/basic
+
+LANGUAGE: bash
+CODE:
+```
+npm run build
+```
+
+----------------------------------------
+
+TITLE: Initialize TanStack Router in Solid.js
+DESCRIPTION: This code snippet demonstrates the basic setup for integrating TanStack Router into a Solid.js application. It imports necessary components, creates a router instance with predefined configurations like route tree, default preload behavior, stale time, and scroll restoration. It also includes a TypeScript declaration for type safety and renders the RouterProvider into the DOM.
+
+SOURCE: https://tanstack.com/start/latest/router/latest/docs/framework/solid/examples/quickstart-file-based
+
+LANGUAGE: tsx
+CODE:
+```
+import { render } from 'solid-js/web'
+import { RouterProvider, createRouter } from '@tanstack/solid-router'
+import { routeTree } from './routeTree.gen'
+import './styles.css'
+
+// Set up a Router instance
+const router = createRouter({
+  routeTree,
+  defaultPreload: 'intent',
+  defaultStaleTime: 5000,
+  scrollRestoration: true,
+})
+
+// Register things for typesafety
+declare module '@tanstack/solid-router' {
+  interface Register {
+    router: typeof router
+  }
+}
+
+const rootElement = document.getElementById('app')!
+
+if (!rootElement.innerHTML) {
+  render(() => <RouterProvider router={router} />, rootElement)
+}
+
+```
+
+----------------------------------------
+
+TITLE: Start Svelte Development Server
+DESCRIPTION: After installing dependencies, run `npm run dev` to start the development server. An optional flag `--open` can be used to automatically open the application in a new browser tab.
+
+SOURCE: https://tanstack.com/start/latest/query/v4/docs/framework/svelte/examples/load-more-infinite-scroll
+
+LANGUAGE: bash
+CODE:
+```
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
+
+----------------------------------------
+
+TITLE: Install @tanstack/query-persist-client-core Package
+DESCRIPTION: Commands to install the `@tanstack/query-persist-client-core` package using various JavaScript package managers.
+
+SOURCE: https://tanstack.com/start/latest/query/latest/docs/framework/react/plugins/createPersister
+
+LANGUAGE: bash
+CODE:
+```
+npm install @tanstack/query-persist-client-core
+```
+
+LANGUAGE: bash
+CODE:
+```
+pnpm add @tanstack/query-persist-client-core
+```
+
+LANGUAGE: bash
+CODE:
+```
+yarn add @tanstack/query-persist-client-core
+```
+
+LANGUAGE: bash
+CODE:
+```
+bun add @tanstack/query-persist-client-core
+```
+
+----------------------------------------
+
+TITLE: Import React Query via ESM.sh CDN
+DESCRIPTION: Example of importing React, ReactDOM, and QueryClient from @tanstack/react-query using an ESM-compatible CDN like ESM.sh. This method is suitable for environments without module bundlers.
+
+SOURCE: https://tanstack.com/start/latest/query/latest/docs/framework/react/installation
+
+LANGUAGE: html
+CODE:
+```
+<script type="module">
+  import React from 'https://esm.sh/react@18.2.0'
+  import ReactDOM from 'https://esm.sh/react-dom@18.2.0'
+  import { QueryClient } from 'https://esm.sh/@tanstack/react-query'
+</script>
+```
+
+----------------------------------------
+
+TITLE: TanStack React Router Root Route and Document Setup
+DESCRIPTION: This comprehensive snippet defines the root route for a TanStack React Router application, configuring global metadata in the document's `<head>`, setting up error and not-found components, and structuring the main application layout with navigation links and development tools.
+
+SOURCE: https://tanstack.com/start/latest/start/latest/docs/framework/react/examples/start-basic-react-query
+
+LANGUAGE: tsx
+CODE:
+```
+/// <reference types="vite/client" />
+import {
+  HeadContent,
+  Link,
+  Outlet,
+  Scripts,
+  createRootRouteWithContext,
+} from '@tanstack/react-router'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+import * as React from 'react'
+import type { QueryClient } from '@tanstack/react-query'
+import { DefaultCatchBoundary } from '~/components/DefaultCatchBoundary'
+import { NotFound } from '~/components/NotFound'
+import appCss from '~/styles/app.css?url'
+import { seo } from '~/utils/seo'
+
+export const Route = createRootRouteWithContext<{
+  queryClient: QueryClient
+}>()({
+  head: () => ({
+    meta: [
+      {
+        charSet: 'utf-8',
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1',
+      },
+      ...seo({
+        title:
+          'TanStack Start | Type-Safe, Client-First, Full-Stack React Framework',
+        description: `TanStack Start is a type-safe, client-first, full-stack React framework. `,
+      }),
+    ],
+    links: [
+      { rel: 'stylesheet', href: appCss },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/apple-touch-icon.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        href: '/favicon-32x32.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        href: '/favicon-16x16.png',
+      },
+      { rel: 'manifest', href: '/site.webmanifest', color: '#fffff' },
+      { rel: 'icon', href: '/favicon.ico' },
+    ],
+  }),
+  errorComponent: (props) => {
+    return (
+      <RootDocument>
+        <DefaultCatchBoundary {...props} />
+      </RootDocument>
+    )
+  },
+  notFoundComponent: () => <NotFound />,
+  component: RootComponent,
+})
+
+function RootComponent() {
+  return (
+    <RootDocument>
+      <Outlet />
+    </RootDocument>
+  )
+}
+
+function RootDocument({ children }: { children: React.ReactNode }) {
+  return (
+    <html>
+      <head>
+        <HeadContent />
+      </head>
+      <body>
+        <div className="p-2 flex gap-2 text-lg">
+          <Link
+            to="/"
+            activeProps={{
+              className: 'font-bold',
+            }}
+            activeOptions={{ exact: true }}
+          >
+            Home
+          </Link>{' '}
+          <Link
+            to="/posts"
+            activeProps={{
+              className: 'font-bold',
+            }}
+          >
+            Posts
+          </Link>{' '}
+          <Link
+            to="/users"
+            activeProps={{
+              className: 'font-bold',
+            }}
+          >
+            Users
+          </Link>{' '}
+          <Link
+            to="/route-a"
+            activeProps={{
+              className: 'font-bold',
+            }}
+          >
+            Pathless Layout
+          </Link>{' '}
+          <Link
+            to="/deferred"
+            activeProps={{
+              className: 'font-bold',
+            }}
+          >
+            Deferred
+          </Link>{' '}
+          <Link
+            // @ts-expect-error
+            to="/this-route-does-not-exist"
+            activeProps={{
+              className: 'font-bold',
+            }}
+          >
+            This Route Does Not Exist
+          </Link>
+        </div>
+        <hr />
+        {children}
+        <TanStackRouterDevtools position="bottom-right" />
+        <ReactQueryDevtools buttonPosition="bottom-left" />
+        <Scripts />
+      </body>
+    </html>
+  )
+}
+```
+
+----------------------------------------
+
+TITLE: Install TanStack Store for SolidJS
+DESCRIPTION: Installs the TanStack Store adapter for SolidJS projects. This package is compatible with both Solid and SolidStart frameworks, enabling reactive state management.
+
+SOURCE: https://tanstack.com/start/latest/store/latest/docs/installation
+
+LANGUAGE: sh
+CODE:
+```
+npm install @tanstack/solid-store
+```
+
+----------------------------------------
+
+TITLE: Nuxt 3 Project Setup and Development Commands (Yarn)
+DESCRIPTION: Essential `yarn` commands for setting up a Nuxt 3 project, starting the development server, and building for production. These commands are part of the Nuxt 3 example for TanStack Query, demonstrating the basic workflow.
+
+SOURCE: https://tanstack.com/start/latest/query/latest/docs/framework/vue/examples/nuxt3
+
+LANGUAGE: bash
+CODE:
+```
+yarn install
+yarn dev
+yarn build
+```
+
+----------------------------------------
+
+TITLE: Create Svelte Project with create-svelte
+DESCRIPTION: Commands to initialize a new Svelte project using `npm create svelte@latest`, allowing creation in the current directory or a specified new directory.
+
+SOURCE: https://tanstack.com/start/latest/query/latest/docs/framework/svelte/examples/basic
+
+LANGUAGE: bash
+CODE:
+```
+# create a new project in the current directory
+npm create svelte@latest
+
+# create a new project in my-app
+npm create svelte@latest my-app
+```
+
+----------------------------------------
+
+TITLE: Create a new Svelte project
+DESCRIPTION: Commands to initialize a new Svelte project using `npm create svelte@latest`. You can create a project in the current directory or specify a new directory name.
+
+SOURCE: https://tanstack.com/start/latest/query/v4/docs/framework/svelte/examples/basic
+
+LANGUAGE: bash
+CODE:
+```
+# create a new project in the current directory
+npm create svelte@latest
+
+# create a new project in my-app
+npm create svelte@latest my-app
+```
+
+----------------------------------------
+
+TITLE: Install TanStack Router and Devtools Dependencies Manually
+DESCRIPTION: Commands to manually install the core TanStack Router library, its React devtools, and the Vite plugin using various package managers like npm, pnpm, yarn, bun, and deno.
+
+SOURCE: https://tanstack.com/start/latest/router/latest/docs/framework/react/quick-start
+
+LANGUAGE: sh
+CODE:
+```
+npm install @tanstack/react-router @tanstack/react-router-devtools
+npm install -D @tanstack/router-plugin
+# or
+pnpm add @tanstack/react-router @tanstack/react-router-devtools
+pnpm add -D @tanstack/router-plugin
+# or
+yarn add @tanstack/react-router @tanstack/react-router-devtools
+yarn add -D @tanstack/router-plugin
+# or
+bun add @tanstack/react-router @tanstack/react-router-devtools
+bun add -D @tanstack/router-plugin
+# or
+deno add npm:@tanstack/react-router npm:@tanstack/router-plugin npm:@tanstack/react-router-devtools
+```
+
+----------------------------------------
+
+TITLE: Fetch Data using useQuery with Vue 3 <script setup>
+DESCRIPTION: Illustrates a basic example of using the useQuery hook from @tanstack/vue-query within a Vue <script setup> block. It shows how to define a query key, a query function, and destructure common query states like isPending, isFetching, isError, data, and error.
+
+SOURCE: https://tanstack.com/start/latest/query/latest/docs/framework/vue/installation
+
+LANGUAGE: vue
+CODE:
+```
+<script setup>
+import { useQuery } from '@tanstack/vue-query'
+
+const { isPending, isFetching, isError, data, error } = useQuery({
+  queryKey: ['todos'],
+  queryFn: getTodos,
+})
+</script>
+
+<template>...</template>
+```
+
+----------------------------------------
+
+TITLE: Install TanStack Router with Deno
+DESCRIPTION: This command demonstrates how to add TanStack Router, its plugin, and devtools to a Deno project using the npm specifier. It ensures all necessary packages are available for development.
+
+SOURCE: https://tanstack.com/start/latest/router/latest/docs/framework/react/quick-start
+
+LANGUAGE: shell
+CODE:
+```
+deno add npm:@tanstack/react-router npm:@tanstack/router-plugin npm:@tanstack/react-router-devtools
+```
+
+----------------------------------------
+
+TITLE: Initialize New TanStack Start Project Directory
+DESCRIPTION: This command sequence creates a new directory named 'myApp', navigates into it, and initializes a new npm project with default settings. This is the foundational first step in setting up any new TanStack Start application.
+
+SOURCE: https://tanstack.com/start/latest/start/latest/docs/framework/solid/build-from-scratch
+
+LANGUAGE: shell
+CODE:
+```
+mkdir myApp
+cd myApp
+npm init -y
+```
+
+----------------------------------------
+
+TITLE: Quick Start: Basic Form and Field Setup with TanStack Form in Angular
+DESCRIPTION: This snippet demonstrates the minimal setup for creating a form and a single field using TanStack Form within an Angular application. It initializes a form with a default value for 'fullName' and handles form submission by logging the value to the console. This example is intended for a quick start and does not include validation or error handling.
+
+SOURCE: https://tanstack.com/start/latest/form/latest/docs/framework/angular/quick-start
+
+LANGUAGE: TypeScript
+CODE:
+```
+import { Component } from '@angular/core'
+import { bootstrapApplication } from '@angular/platform-browser'
+import { TanStackField, injectForm } from '@tanstack/angular-form'
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [TanStackField],
+  template: `
+    <form (submit)="handleSubmit($event)">
+      <div>
+        <ng-container
+          [tanstackField]="form"
+          name="fullName"
+          #fullName="field"
+        >
+          <label [for]="fullName.api.name">First Name:</label>
+          <input
+            [name]="fullName.api.name"
+            [value]="fullName.api.state.value"
+            (blur)="fullName.api.handleBlur()"
+            (input)="fullName.api.handleChange($any($event).target.value)"
+          />
+        </ng-container>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  `,
+})
+export class AppComponent {
+  form = injectForm({
+    defaultValues: {
+      fullName: '',
+    },
+    onSubmit({ value }) {
+      // Do something with form data
+      console.log(value)
+    },
+  })
+
+  handleSubmit(event: SubmitEvent) {
+    event.preventDefault()
+    event.stopPropagation()
+    this.form.handleSubmit()
+  }
+}
+
+bootstrapApplication(AppComponent).catch((err) => console.error(err))
+```
+
+----------------------------------------
+
+TITLE: Initialize TanStack Router for React Application
+DESCRIPTION: This code snippet demonstrates the basic setup for TanStack Router in a React application. It imports necessary components, creates a router instance using a generated route tree, configures default preload behavior and scroll restoration, and registers the router for TypeScript typesafety. Finally, it renders the React application using RouterProvider.
+
+SOURCE: https://tanstack.com/start/latest/router/latest/docs/framework/react/examples/quickstart-file-based
+
+LANGUAGE: tsx
+CODE:
+```
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { RouterProvider, createRouter } from '@tanstack/react-router'
+import { routeTree } from './routeTree.gen'
+import './styles.css'
+
+// Set up a Router instance
+const router = createRouter({
+  routeTree,
+  defaultPreload: 'intent',
+  scrollRestoration: true,
+})
+
+// Register things for typesafety
+declare module '@tanstack/react-router' {
+  interface Register {
+    router: typeof router
+  }
+}
+
+const rootElement = document.getElementById('app')!
+
+if (!rootElement.innerHTML) {
+  const root = ReactDOM.createRoot(rootElement)
+  root.render(<RouterProvider router={router} />)
+}
+
+```
+
+----------------------------------------
+
+TITLE: Install Solid Query with Package Managers
+DESCRIPTION: This snippet demonstrates how to install the Solid Query library using various popular package managers. Choose the command corresponding to your preferred package manager to add Solid Query to your project dependencies.
+
+SOURCE: https://tanstack.com/start/latest/query/v5/docs/framework/solid/installation
+
+LANGUAGE: bash
+CODE:
+```
+npm i @tanstack/solid-query
+```
+
+LANGUAGE: bash
+CODE:
+```
+pnpm add @tanstack/solid-query
+```
+
+LANGUAGE: bash
+CODE:
+```
+yarn add @tanstack/solid-query
+```
+
+LANGUAGE: bash
+CODE:
+```
+bun add @tanstack/solid-query
+```
+
+----------------------------------------
+
+TITLE: TanStack Form Svelte Basic Form and Field Setup
+DESCRIPTION: This snippet demonstrates the minimum setup required to create a form and add a field using TanStack Form in a Svelte application. It shows how to initialize a form with default values, handle submission, and bind an input field to the form state, without including validation or error handling.
+
+SOURCE: https://tanstack.com/start/latest/form/latest/docs/framework/svelte/quick-start
+
+LANGUAGE: svelte
+CODE:
+```
+<script>
+  import { createForm } from '@tanstack/svelte-form'
+
+  const form = createForm(() => ({
+    defaultValues: {
+      fullName: '',
+    },
+    onSubmit: async ({ value }) => {
+      // Do something with form data
+      console.log(value)
+    },
+  }))
+</script>
+
+<div>
+  <h1>Simple Form Example</h1>
+  <form
+    onsubmit={(e) => {
+      e.preventDefault()
+      e.stopPropagation()
+      form.handleSubmit()
+    }}
+  >
+    <div>
+      <form.Field name="fullName">
+        {#snippet children(field)}
+          <input
+            name={field.name}
+            value={field.state.value}
+            onblur={field.handleBlur}
+            oninput={(e) => field.handleChange(e.target.value)}
+          />
+        {/snippet}
+      </form.Field>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+```
+
+----------------------------------------
+
+TITLE: Header API: Get Header Start Position
+DESCRIPTION: Retrieves the starting pixel position of a header. This method is part of the Header API, accessible on individual header objects.
+
+SOURCE: https://tanstack.com/start/latest/table/latest/docs/api/features/column-sizing
+
+LANGUAGE: APIDOC
+CODE:
+```
+header.getStart(): number
+```
+
+----------------------------------------
+
+TITLE: TanStack React Application Core Imports and Type References
+DESCRIPTION: This snippet includes essential imports for a TanStack React application, leveraging @tanstack/react-query-devtools, @tanstack/react-router, and other utilities. It also includes a Vite client type reference for development environment setup.
+
+SOURCE: https://tanstack.com/start/latest/start/latest/docs/framework/react/examples/start-trellaux
+
+LANGUAGE: typescript
+CODE:
+```
+/// <reference types="vite/client" />
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools/production'
+import {
+  HeadContent,
+  Link,
+  Outlet,
+  Scripts,
+  createRootRouteWithContext,
+  useRouterState,
+} from '@tanstack/react-router'
+import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+import * as React from 'react'
+import { Toaster } from 'react-hot-toast'
+import type { QueryClient } from '@tanstack/react-query'
+import { DefaultCatchBoundary } from '~/components/DefaultCatchBoundary'
+import { IconLink } from '~/components/IconLink'
+import { NotFound } from '~/components/NotFound'
+import appCss from '~/styles/app.css?url'
+import { seo } from '~/utils/seo'
+import { Loader } from '~/components/Loader'
+```
+
+----------------------------------------
+
+TITLE: Column API: Get Column Start Position
+DESCRIPTION: Retrieves the starting pixel position of a column. This method is part of the Column API, accessible on individual column objects.
+
+SOURCE: https://tanstack.com/start/latest/table/latest/docs/api/features/column-sizing
+
+LANGUAGE: APIDOC
+CODE:
+```
+column.getStart(): number
+```
+
+----------------------------------------
+
+TITLE: Solid.js Root Document Layout Component with Navigation
+DESCRIPTION: Implements the `RootDocument` Solid.js component, serving as the primary layout wrapper for the application. It includes `HeadContent`, a navigation bar with `Link` components for various routes, a horizontal rule, renders its children, integrates `TanStackRouterDevtools` for debugging, and includes `Scripts` for client-side functionality.
+
+SOURCE: https://tanstack.com/start/latest/start/latest/docs/framework/solid/examples/start-basic
+
+LANGUAGE: typescript
+CODE:
+```
+function RootDocument({ children }: { children: Solid.JSX.Element }) {
+  return (
+    <>
+      <HeadContent />
+      <div class="p-2 flex gap-2 text-lg">
+        <Link
+          to="/"
+          activeProps={{
+            class: 'font-bold',
+          }}
+          activeOptions={{ exact: true }}
+        >
+          Home
+        </Link>{' '}
+        <Link
+          to="/posts"
+          activeProps={{
+            class: 'font-bold',
+          }}
+        >
+          Posts
+        </Link>{' '}
+        <Link
+          to="/users"
+          activeProps={{
+            class: 'font-bold',
+          }}
+        >
+          Users
+        </Link>{' '}
+        <Link
+          to="/route-a"
+          activeProps={{
+            class: 'font-bold',
+          }}
+        >
+          Pathless Layout
+        </Link>{' '}
+        <Link
+          to="/deferred"
+          activeProps={{
+            class: 'font-bold',
+          }}
+        >
+          Deferred
+        </Link>{' '}
+        <Link
+          // @ts-expect-error
+          to="/this-route-does-not-exist"
+          activeProps={{
+            class: 'font-bold',
+          }}
+        >
+          This Route Does Not Exist
+        </Link>
+      </div>
+      <hr />
+      {children}
+      <TanStackRouterDevtools position="bottom-right" />
+      <Scripts />
+    </>
+  )
+}
+```
+
+----------------------------------------
+
+TITLE: Start TanStack React Start Application on Bun
+DESCRIPTION: This command starts the built TanStack React Start application using the Bun runtime. It executes the main server entry point located in the .output/server directory.
+
+SOURCE: https://tanstack.com/start/latest/start/latest/docs/framework/react/hosting
+
+LANGUAGE: bash
+CODE:
+```
+bun run .output/server/index.mjs
+```
+
+----------------------------------------
+
+TITLE: TanStack React Router Root Route Configuration
+DESCRIPTION: Configures the main application route using `createRootRoute`. This setup includes dynamic `head` content for SEO (meta tags, links), a `beforeLoad` hook to fetch user data server-side, and defines custom error and not-found components for robust error handling.
+
+SOURCE: https://tanstack.com/start/latest/start/latest/docs/framework/react/examples/start-basic-auth
+
+LANGUAGE: tsx
+CODE:
+```
+export const Route = createRootRoute({
+  head: () => ({
+    meta: [
+      {
+        charSet: 'utf-8',
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1',
+      },
+      ...seo({
+        title:
+          'TanStack Start | Type-Safe, Client-First, Full-Stack React Framework',
+        description: `TanStack Start is a type-safe, client-first, full-stack React framework. `,
+      }),
+    ],
+    links: [
+      { rel: 'stylesheet', href: appCss },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/apple-touch-icon.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        href: '/favicon-32x32.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        href: '/favicon-16x16.png',
+      },
+      { rel: 'manifest', href: '/site.webmanifest', color: '#fffff' },
+      { rel: 'icon', href: '/favicon.ico' },
+    ],
+  }),
+  beforeLoad: async () => {
+    const user = await fetchUser()
+
+    return {
+      user,
+    }
+  },
+  errorComponent: (props) => {
+    return (
+      <RootDocument>
+        <DefaultCatchBoundary {...props} />
+      </RootDocument>
+    )
+  },
+  notFoundComponent: () => <NotFound />,
+  component: RootComponent,
+})
+```
+
+----------------------------------------
+
+TITLE: Nuxt 3 Project Lifecycle Commands
+DESCRIPTION: This snippet provides the essential `yarn` commands for managing a Nuxt 3 project's lifecycle, including installing dependencies, starting the local development server, and building the application for production deployment.
+
+SOURCE: https://tanstack.com/start/latest/query/v4/docs/framework/vue/examples/nuxt3
+
+LANGUAGE: bash
+CODE:
+```
+yarn install
+yarn dev
+yarn build
+```
+
+----------------------------------------
+
+TITLE: Simple Example
+DESCRIPTION: Example implementation for TanStack Query: Simple. This demonstrates a basic setup for data fetching using TanStack Query in a React application.
+
+SOURCE: https://tanstack.com/start/latest/query/latest/docs/framework/react/videos
+
+LANGUAGE: APIDOC
+CODE:
+```
+Simple (react)
+```
+
+----------------------------------------
+
+TITLE: Create a New Svelte Project
+DESCRIPTION: Initialize a new Svelte project using the `create-svelte` command-line tool. This command sets up the basic project structure and necessary configuration files, allowing you to specify the project directory.
+
+SOURCE: https://tanstack.com/start/latest/query/latest/docs/framework/svelte/examples/ssr
+
+LANGUAGE: bash
+CODE:
+```
+# create a new project in the current directory
+npm create svelte@latest
+
+# create a new project in my-app
+npm create svelte@latest my-app
+```
+
+----------------------------------------
+
+TITLE: TanStack Table React Example: Basic Table
+DESCRIPTION: A fundamental example demonstrating the basic setup and usage of TanStack Table within a React application.
+
+SOURCE: https://tanstack.com/start/latest/table/latest/docs/framework/react/examples/expanding
+
+LANGUAGE: react
+CODE:
+```
+Basic Table Example: Demonstrates core table setup in React.
+```
+
+----------------------------------------
+
+TITLE: Install TanStack Svelte Query
+DESCRIPTION: Commands to install the TanStack Svelte Query library into your project. These commands add the `@tanstack/svelte-query` package as a dependency using different JavaScript package managers.
+
+SOURCE: https://tanstack.com/start/latest/query/latest/docs/framework/svelte/installation
+
+LANGUAGE: bash
+CODE:
+```
+npm i @tanstack/svelte-query
+```
+
+LANGUAGE: bash
+CODE:
+```
+pnpm add @tanstack/svelte-query
+```
+
+LANGUAGE: bash
+CODE:
+```
+yarn add @tanstack/svelte-query
+```
+
+LANGUAGE: bash
+CODE:
+```
+bun add @tanstack/svelte-query
+```
+
+----------------------------------------
+
+TITLE: Initialize React Application Root
+DESCRIPTION: This code snippet demonstrates the basic setup for a React application's entry point. It imports ReactDOM, gets the root DOM element, and renders the main App component into it using ReactDOM.createRoot.
+
+SOURCE: https://tanstack.com/start/latest/query/v4/docs/framework/react/examples/algolia
+
+LANGUAGE: tsx
+CODE:
+```
+import ReactDOM from 'react-dom/client'
+
+import App from './App'
+
+const rootElement = document.getElementById('root') as HTMLElement
+ReactDOM.createRoot(rootElement).render(<App />)
+```
+
+----------------------------------------
+
+TITLE: Set Up TanStack Router Instance
+DESCRIPTION: Configures and creates the main router instance for the application. It takes the `routeTree`, sets default preload behavior, ensures loaders are always called, enables scroll restoration, and provides the `queryClient` to the router context.
+
+SOURCE: https://tanstack.com/start/latest/router/latest/docs/framework/solid/examples/basic-solid-query
+
+LANGUAGE: TypeScript
+CODE:
+```
+const router = createRouter({
+  routeTree,
+  defaultPreload: 'intent',
+  // Since we're using React Query, we don't want loader calls to ever be stale
+  // This will ensure that the loader is always called when the route is preloaded or visited
+  defaultPreloadStaleTime: 0,
+  scrollRestoration: true,
+  context: {
+    queryClient,
+  },
+})
+```
+
+----------------------------------------
+
+TITLE: Implementing File-Based Routing with Server Functions (RPCs) in TanStack Start
+DESCRIPTION: This example illustrates how to define a file-based route (`/`) using `createFileRoute` and integrate server functions (`createServerFn`) for both data fetching (GET) and data updates (POST). It shows how a route's `loader` can pre-fetch data and how client-side actions can call server functions and invalidate the router to refresh data.
+
+SOURCE: https://tanstack.com/start/latest/start/latest/docs/framework/solid/learn-the-basics
+
+LANGUAGE: tsx
+CODE:
+```
+import * as fs from 'node:fs'
+import { createFileRoute, useRouter } from '@tanstack/solid-router'
+import { createServerFn } from '@tanstack/solid-start'
+
+const filePath = 'count.txt'
+
+async function readCount() {
+  return parseInt(
+    await fs.promises.readFile(filePath, 'utf-8').catch(() => '0'),
+  )
+}
+
+const getCount = createServerFn({
+  method: 'GET',
+}).handler(() => {
+  return readCount()
+})
+
+const updateCount = createServerFn({ method: 'POST' })
+  .validator((d: number) => d)
+  .handler(async ({ data }) => {
+    const count = await readCount()
+    await fs.promises.writeFile(filePath, `${count + data}`)
+  })
+
+export const Route = createFileRoute('/')({
+  component: Home,
+  loader: async () => await getCount(),
+})
+
+function Home() {
+  const router = useRouter()
+  const state = Route.useLoaderData()
+
+  return (
+    <button
+      type="button"
+      onClick={() => {
+        updateCount({ data: 1 }).then(() => {
+          router.invalidate()
+        })
+      }}
+    >
+      Add 1 to {state}?
+    </button>
+  )
+}
+```
+
+----------------------------------------
+
+TITLE: Install TanStack Start Development Dependencies
+DESCRIPTION: This command installs development-only dependencies, including TypeScript, type definitions for React, and a Vite plugin for tsconfig paths, crucial for development and build processes.
+
+SOURCE: https://tanstack.com/start/latest/start/latest/docs/framework/react/build-from-scratch
+
+LANGUAGE: shell
+CODE:
+```
+npm i -D typescript @types/react @types/react-dom vite-tsconfig-paths
+```
+
+----------------------------------------
+
+TITLE: Quick Start: Create a Basic TanStack Form in Angular
+DESCRIPTION: This example demonstrates the minimal setup for a TanStack Form in an Angular application. It shows how to create a form instance using `injectForm` and bind a field using `TanStackField`, handling input changes and form submission.
+
+SOURCE: https://tanstack.com/start/latest/form/v1/docs/framework/angular/quick-start
+
+LANGUAGE: TypeScript
+CODE:
+```
+import { Component } from '@angular/core'
+import { bootstrapApplication } from '@angular/platform-browser'
+import { TanStackField, injectForm } from '@tanstack/angular-form'
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [TanStackField],
+  template: `
+    <form (submit)="handleSubmit($event)">
+      <div>
+        <ng-container
+          [tanstackField]="form"
+          name="fullName"
+          #fullName="field"
+        >
+          <label [for]="fullName.api.name">First Name:</label>
+          <input
+            [name]="fullName.api.name"
+            [value]="fullName.api.state.value"
+            (blur)="fullName.api.handleBlur()"
+            (input)="fullName.api.handleChange($any($event).target.value)"
+          />
+        </ng-container>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  `,
+})
+export class AppComponent {
+  form = injectForm({
+    defaultValues: {
+      fullName: '',
+    },
+    onSubmit({ value }) {
+      // Do something with form data
+      console.log(value)
+    },
+  })
+
+  handleSubmit(event: SubmitEvent) {
+    event.preventDefault()
+    event.stopPropagation()
+    this.form.handleSubmit()
+  }
+}
+
+bootstrapApplication(AppComponent).catch((err) => console.error(err))
+```
+
+----------------------------------------
+
+TITLE: Initialize a New TanStack Start Project
+DESCRIPTION: This command sequence creates a new directory for the application, navigates into it, and initializes a new npm project with default settings.
+
+SOURCE: https://tanstack.com/start/latest/start/latest/docs/framework/react/build-from-scratch
+
+LANGUAGE: shell
+CODE:
+```
+mkdir myApp
+cd myApp
+npm init -y
+```
+
+----------------------------------------
+
+TITLE: Define a Simple GET Server Route in TanStack Start
+DESCRIPTION: This snippet demonstrates how to create a basic server-side GET endpoint using `createServerFileRoute` in TanStack Start. It returns a simple 'Hello, World!' response.
+
+SOURCE: https://tanstack.com/start/latest/start/latest/docs/framework/react/server-routes
+
+LANGUAGE: ts
+CODE:
+```
+// routes/hello.ts
+
+export const ServerRoute = createServerFileRoute().methods({
+  GET: async ({ request }) => {
+    return new Response('Hello, World!')
+  },
+})
+```
+
+----------------------------------------
+
+TITLE: Define Server Route GET Method in TanStack Start
+DESCRIPTION: Shows the migration from a traditional `export async function GET()` in Next.js to defining a server route with `createServerFileRoute().methods({ GET: ... })` for handling GET requests and returning JSON in TanStack Start.
+
+SOURCE: https://tanstack.com/start/latest/start/latest/docs/framework/react/migrate-from-next-js
+
+LANGUAGE: ts
+CODE:
+```
+- export async function GET() { // [!code --]
++ export const ServerRoute = createServerFileRoute().methods({
++   GET: async () => {
+    return Response.json("Hello, World!")
+  }
++ }) // [!code ++]
+```
+
+----------------------------------------
+
+TITLE: Scaffold TanStack Router Project for Solid.js
+DESCRIPTION: Quickly initialize a new TanStack Router project using the `create-tsrouter-app` CLI. This command sets up a Solid.js application with file-based routing, creating a new directory with the necessary project structure.
+
+SOURCE: https://tanstack.com/start/latest/router/latest/docs/framework/solid/quick-start
+
+LANGUAGE: sh
+CODE:
+```
+npx create-tsrouter-app@latest my-app --framework solid --template file-router
+```
+
+----------------------------------------
+
+TITLE: Install uuid and its types for TanStack Start project
+DESCRIPTION: Instructions to install the 'uuid' package for generating unique IDs and its corresponding TypeScript type definitions as a development dependency using 'pnpm'.
+
+SOURCE: https://tanstack.com/start/latest/start/latest/docs/framework/react/reading-writing-file
+
+LANGUAGE: bash
+CODE:
+```
+pnpm add uuid
+pnpm add -D @types/uuid
+```
+
+----------------------------------------
+
+TITLE: Main Svelte Application Layout with Store Components
+DESCRIPTION: This Svelte component serves as the main application entry point, importing 'Increment' and 'Display' components. It sets up the basic HTML structure and renders multiple instances of 'Increment' and 'Display' components to demonstrate state interaction for both 'dogs' and 'cats' counters.
+
+SOURCE: https://tanstack.com/start/latest/store/latest/docs/framework/svelte/quick-start
+
+LANGUAGE: html
+CODE:
+```
+<script lang="ts">
+    import Increment from "./Increment.svelte";
+    import Display from "./Display.";
+</script>
+
+<h1>How many of your friends like cats or dogs?</h1>
+<p>Press one of the buttons to add a counter of how many of your friends like cats or dogs</p>
+<Increment animal="dogs" />
+<Display animal="dogs" />
+<Increment animal="cats" />
+<Display animal="cats" />
+```
+
+----------------------------------------
+
+TITLE: Abstract Database Integration with TanStack Start Server Functions
+DESCRIPTION: This abstract example demonstrates how to connect with a database and perform read/write operations using TanStack Start server functions. It shows the creation of a database client and server functions for fetching and creating users, illustrating the flexibility to use any database provider.
+
+SOURCE: https://tanstack.com/start/latest/start/latest/docs/framework/solid/databases
+
+LANGUAGE: tsx
+CODE:
+```
+import { createServerFn } from '@tanstack/react-start'
+
+const db = createMyDatabaseClient()
+
+export const getUser = createServerFn(async ({ ctx }) => {
+  const user = await db.getUser(ctx.userId)
+  return user
+})
+
+export const createUser = createServerFn(async ({ ctx, input }) => {
+  const user = await db.createUser(input)
+  return user
+})
+```
