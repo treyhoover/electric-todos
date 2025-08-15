@@ -17,7 +17,7 @@
 		"noImplicitReturns": true,
 		"noUncheckedIndexedAccess": true,
 		"noUnusedLocals": true,
-		"noUnusedParameters": false, // Let ESLint handle this
+		"noUnusedParameters": false, // Let Biome handle this
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"strict": true,
@@ -34,7 +34,6 @@
 		"todo-app/**/*.tsx",
 		"examples/**/*.ts",
 		"examples/**/*.tsx",
-		"eslint.config.mjs",
 		"scripts/verify-links.ts"
 	],
 	"exclude": ["node_modules"]
