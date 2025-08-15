@@ -13,11 +13,7 @@ import { createServerRootRoute } from '@tanstack/react-start/server'
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as HealthRouteImport } from './routes/health'
 import { Route as IndexRouteImport } from './routes/index'
-import { ServerRoute as ApiTodosServerRouteImport } from './routes/api/todos'
 import { ServerRoute as ApiShapeProxyServerRouteImport } from './routes/api/shape-proxy'
-import { ServerRoute as ApiConfigServerRouteImport } from './routes/api/config'
-import { ServerRoute as ApiTodosIdServerRouteImport } from './routes/api/todos.$id'
-import { ServerRoute as ApiConfigIdServerRouteImport } from './routes/api/config.$id'
 
 const rootServerRouteImport = createServerRootRoute()
 
@@ -31,30 +27,10 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiTodosServerRoute = ApiTodosServerRouteImport.update({
-  id: '/api/todos',
-  path: '/api/todos',
-  getParentRoute: () => rootServerRouteImport,
-} as any)
 const ApiShapeProxyServerRoute = ApiShapeProxyServerRouteImport.update({
   id: '/api/shape-proxy',
   path: '/api/shape-proxy',
   getParentRoute: () => rootServerRouteImport,
-} as any)
-const ApiConfigServerRoute = ApiConfigServerRouteImport.update({
-  id: '/api/config',
-  path: '/api/config',
-  getParentRoute: () => rootServerRouteImport,
-} as any)
-const ApiTodosIdServerRoute = ApiTodosIdServerRouteImport.update({
-  id: '/$id',
-  path: '/$id',
-  getParentRoute: () => ApiTodosServerRoute,
-} as any)
-const ApiConfigIdServerRoute = ApiConfigIdServerRouteImport.update({
-  id: '/$id',
-  path: '/$id',
-  getParentRoute: () => ApiConfigServerRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -83,55 +59,25 @@ export interface RootRouteChildren {
   HealthRoute: typeof HealthRoute
 }
 export interface FileServerRoutesByFullPath {
-  '/api/config': typeof ApiConfigServerRouteWithChildren
   '/api/shape-proxy': typeof ApiShapeProxyServerRoute
-  '/api/todos': typeof ApiTodosServerRouteWithChildren
-  '/api/config/$id': typeof ApiConfigIdServerRoute
-  '/api/todos/$id': typeof ApiTodosIdServerRoute
 }
 export interface FileServerRoutesByTo {
-  '/api/config': typeof ApiConfigServerRouteWithChildren
   '/api/shape-proxy': typeof ApiShapeProxyServerRoute
-  '/api/todos': typeof ApiTodosServerRouteWithChildren
-  '/api/config/$id': typeof ApiConfigIdServerRoute
-  '/api/todos/$id': typeof ApiTodosIdServerRoute
 }
 export interface FileServerRoutesById {
   __root__: typeof rootServerRouteImport
-  '/api/config': typeof ApiConfigServerRouteWithChildren
   '/api/shape-proxy': typeof ApiShapeProxyServerRoute
-  '/api/todos': typeof ApiTodosServerRouteWithChildren
-  '/api/config/$id': typeof ApiConfigIdServerRoute
-  '/api/todos/$id': typeof ApiTodosIdServerRoute
 }
 export interface FileServerRouteTypes {
   fileServerRoutesByFullPath: FileServerRoutesByFullPath
-  fullPaths:
-    | '/api/config'
-    | '/api/shape-proxy'
-    | '/api/todos'
-    | '/api/config/$id'
-    | '/api/todos/$id'
+  fullPaths: '/api/shape-proxy'
   fileServerRoutesByTo: FileServerRoutesByTo
-  to:
-    | '/api/config'
-    | '/api/shape-proxy'
-    | '/api/todos'
-    | '/api/config/$id'
-    | '/api/todos/$id'
-  id:
-    | '__root__'
-    | '/api/config'
-    | '/api/shape-proxy'
-    | '/api/todos'
-    | '/api/config/$id'
-    | '/api/todos/$id'
+  to: '/api/shape-proxy'
+  id: '__root__' | '/api/shape-proxy'
   fileServerRoutesById: FileServerRoutesById
 }
 export interface RootServerRouteChildren {
-  ApiConfigServerRoute: typeof ApiConfigServerRouteWithChildren
   ApiShapeProxyServerRoute: typeof ApiShapeProxyServerRoute
-  ApiTodosServerRoute: typeof ApiTodosServerRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -154,13 +100,6 @@ declare module '@tanstack/react-router' {
 }
 declare module '@tanstack/react-start/server' {
   interface ServerFileRoutesByPath {
-    '/api/todos': {
-      id: '/api/todos'
-      path: '/api/todos'
-      fullPath: '/api/todos'
-      preLoaderRoute: typeof ApiTodosServerRouteImport
-      parentRoute: typeof rootServerRouteImport
-    }
     '/api/shape-proxy': {
       id: '/api/shape-proxy'
       path: '/api/shape-proxy'
@@ -168,53 +107,8 @@ declare module '@tanstack/react-start/server' {
       preLoaderRoute: typeof ApiShapeProxyServerRouteImport
       parentRoute: typeof rootServerRouteImport
     }
-    '/api/config': {
-      id: '/api/config'
-      path: '/api/config'
-      fullPath: '/api/config'
-      preLoaderRoute: typeof ApiConfigServerRouteImport
-      parentRoute: typeof rootServerRouteImport
-    }
-    '/api/todos/$id': {
-      id: '/api/todos/$id'
-      path: '/$id'
-      fullPath: '/api/todos/$id'
-      preLoaderRoute: typeof ApiTodosIdServerRouteImport
-      parentRoute: typeof ApiTodosServerRoute
-    }
-    '/api/config/$id': {
-      id: '/api/config/$id'
-      path: '/$id'
-      fullPath: '/api/config/$id'
-      preLoaderRoute: typeof ApiConfigIdServerRouteImport
-      parentRoute: typeof ApiConfigServerRoute
-    }
   }
 }
-
-interface ApiConfigServerRouteChildren {
-  ApiConfigIdServerRoute: typeof ApiConfigIdServerRoute
-}
-
-const ApiConfigServerRouteChildren: ApiConfigServerRouteChildren = {
-  ApiConfigIdServerRoute: ApiConfigIdServerRoute,
-}
-
-const ApiConfigServerRouteWithChildren = ApiConfigServerRoute._addFileChildren(
-  ApiConfigServerRouteChildren,
-)
-
-interface ApiTodosServerRouteChildren {
-  ApiTodosIdServerRoute: typeof ApiTodosIdServerRoute
-}
-
-const ApiTodosServerRouteChildren: ApiTodosServerRouteChildren = {
-  ApiTodosIdServerRoute: ApiTodosIdServerRoute,
-}
-
-const ApiTodosServerRouteWithChildren = ApiTodosServerRoute._addFileChildren(
-  ApiTodosServerRouteChildren,
-)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -224,9 +118,7 @@ export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
 const rootServerRouteChildren: RootServerRouteChildren = {
-  ApiConfigServerRoute: ApiConfigServerRouteWithChildren,
   ApiShapeProxyServerRoute: ApiShapeProxyServerRoute,
-  ApiTodosServerRoute: ApiTodosServerRouteWithChildren,
 }
 export const serverRouteTree = rootServerRouteImport
   ._addFileChildren(rootServerRouteChildren)
