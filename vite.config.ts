@@ -6,17 +6,17 @@ import viteTsConfigPaths from "vite-tsconfig-paths";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [
-		viteTsConfigPaths({
-			projects: ["./tsconfig.json"],
-		}) as PluginOption,
-		tailwindcss() as PluginOption,
-		tanstackStart({
-			customViteReactPlugin: true,
-			spa: {
-				enabled: true,
-			},
-		}),
-		react(),
-	],
+  plugins: [
+    viteTsConfigPaths({
+      projects: ["./tsconfig.json"],
+    }) as PluginOption,
+    tailwindcss() as PluginOption,
+    tanstackStart({
+      customViteReactPlugin: true,
+      spa: {
+        enabled: true,
+      },
+    }),
+    react(),
+  ],
 });

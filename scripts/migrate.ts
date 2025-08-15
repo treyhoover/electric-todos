@@ -8,19 +8,19 @@ dotenv.config();
 
 const { Pool } = pkg;
 const pool = new Pool({
-	connectionString: getSecret("DB_URL"),
+  connectionString: getSecret("DB_URL"),
 });
 
 const db = drizzle(pool);
 
 async function main() {
-	console.log("Running migrations...");
-	await migrate(db, { migrationsFolder: "./drizzle" });
-	console.log("Migrations completed!");
-	await pool.end();
+  console.log("Running migrations...");
+  await migrate(db, { migrationsFolder: "./drizzle" });
+  console.log("Migrations completed!");
+  await pool.end();
 }
 
 main().catch((err) => {
-	console.error("Migration failed!", err);
-	process.exit(1);
+  console.error("Migration failed!", err);
+  process.exit(1);
 });
