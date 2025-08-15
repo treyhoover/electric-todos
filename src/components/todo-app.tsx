@@ -17,43 +17,26 @@ interface TodoAppProps {
 export function TodoApp({ todos, configData, todoCollection, configCollection, title }: TodoAppProps) {
   const [newTodo, setNewTodo] = useState("");
 
-  // Define a type-safe helper function to get config values
-  const getConfigValue = (key: string): string | undefined => {
-    for (const config of configData) {
-      if (config.key === key) {
-        return config.value;
-      }
-    }
-    return undefined;
-  };
-
-  // Define a helper function to update config values
-  const setConfigValue = (key: string, value: string): void => {
-    for (const config of configData) {
-      if (config.key === key) {
-        configCollection.update(config.id, (draft) => {
-          draft.value = value;
-        });
-        return;
-      }
-    }
-
-    // If the config doesn't exist yet, create it
-    configCollection.insert({
-      id: Math.round(Math.random() * 1000000),
-      key,
-      value,
-      created_at: new Date(),
-      updated_at: new Date(),
-    });
-  };
-
-  const backgroundColor = getConfigValue("backgroundColor");
+  const backgroundColorConfig = configData.find((config) => config.key === "backgroundColor");
+  const backgroundColor = backgroundColorConfig?.value;
   const titleColor = getComplementaryColor(backgroundColor);
 
   const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newColor = e.target.value;
-    setConfigValue("backgroundColor", newColor);
+
+    if (backgroundColorConfig) {
+      configCollection.update(backgroundColorConfig.id, (draft) => {
+        draft.value = newColor;
+      });
+    } else {
+      configCollection.insert({
+        id: Math.round(Math.random() * 1000000),
+        key: "backgroundColor",
+        value: newColor,
+        created_at: new Date(),
+        updated_at: new Date(),
+      });
+    }
   };
 
   const handleSubmit = (e: FormEvent) => {

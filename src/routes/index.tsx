@@ -1,6 +1,6 @@
 import { useLiveQuery } from "@tanstack/react-db";
 import { createFileRoute } from "@tanstack/react-router";
-import { TodoApp } from "@/components/TodoApp";
+import { TodoApp } from "@/components/todo-app";
 import { electricConfigCollection, electricTodoCollection } from "@/lib/collections";
 
 export const Route = createFileRoute("/")({
