@@ -9,11 +9,8 @@
 - Install packages
   `pnpm install`
 
-- Start dev server & Docker containers: Postgres, Electric, TrailBase
+- Start dev server & Docker containers: Postgres, Electric
   `pnpm dev`
 
 - Run Postgres DB migrations
   `pnpm db:push`
-
-- Optionally, check out the TrailBase admin UI @ http://localhost:4000/\_/admin
-  (email: admin@localhost, password: secret)

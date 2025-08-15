@@ -17,7 +17,6 @@ const config: KnipConfig = {
     'node_modules/**',
     '.output/**',
     'src/routeTree.gen.ts',
-    'traildepot/**',
   ],
   ignoreDependencies: [
     'tailwindcss', // Used via @tailwindcss/vite plugin
