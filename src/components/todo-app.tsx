@@ -3,7 +3,8 @@ import type React from "react";
 import type { FormEvent } from "react";
 import { useState } from "react";
 
-import type { SelectConfig, SelectTodo } from "@/db/validation";
+import type { SelectConfig } from "@/db/schema/config";
+import type { SelectTodo } from "@/db/schema/todos";
 import { getComplementaryColor } from "@/lib/color";
 
 interface TodoAppProps {

@@ -2,9 +2,8 @@ import { createServerFn } from "@tanstack/react-start";
 import { eq } from "drizzle-orm";
 import { z } from "zod";
 import { db } from "@/db/drizzle";
-import { todos } from "@/db/schema";
+import { insertTodoSchema, todosTable, updateTodoSchema } from "@/db/schema/todos";
 import { generateTxId } from "@/db/utils";
-import { insertTodoSchema, updateTodoSchema } from "@/db/validation";
 
 export const createTodo = createServerFn({ method: "POST" })
   .validator(insertTodoSchema)
@@ -16,7 +15,7 @@ export const createTodo = createServerFn({ method: "POST" })
 
     const result = await db.transaction(async (tx) => {
       const txid = await generateTxId(tx);
-      const [todo] = await tx.insert(todos).values(todoData).returning();
+      const [todo] = await tx.insert(todosTable).values(todoData).returning();
       if (!todo) {
         throw new Error("Failed to create todo");
       }
@@ -36,7 +35,7 @@ export const updateTodo = createServerFn({ method: "POST" })
     const result = await db.transaction(async (tx) => {
       const txid = await generateTxId(tx);
 
-      const [todo] = await tx.update(todos).set(changes).where(eq(todos.id, id)).returning();
+      const [todo] = await tx.update(todosTable).set(changes).where(eq(todosTable.id, id)).returning();
 
       if (!todo) {
         throw new Error("Todo not found");
@@ -54,7 +53,7 @@ export const deleteTodo = createServerFn({ method: "POST" })
     const result = await db.transaction(async (tx) => {
       const txid = await generateTxId(tx);
 
-      const [deleted] = await tx.delete(todos).where(eq(todos.id, id)).returning({ id: todos.id });
+      const [deleted] = await tx.delete(todosTable).where(eq(todosTable.id, id)).returning({ id: todosTable.id });
 
       if (!deleted) {
         throw new Error("Todo not found");

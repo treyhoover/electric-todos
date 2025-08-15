@@ -1,7 +1,8 @@
 import { vars } from "@env/vars";
 import { electricCollectionOptions } from "@tanstack/electric-db-collection";
 import { createCollection } from "@tanstack/react-db";
-import { selectConfigSchema, selectTodoSchema } from "@/db/validation";
+import { selectConfigSchema } from "@/db/schema/config";
+import { selectTodoSchema } from "@/db/schema/todos";
 import * as configFns from "@/server/config";
 import * as todoFns from "@/server/todos";
 
