@@ -27,9 +27,9 @@ const envDefaults: Record<AppEnv, EnvSchema> = {
   },
 };
 
-const appEnv = appEnvSchema.parse(process.env.VITE_APP_ENV);
+const appEnv = appEnvSchema.parse(import.meta.env.VITE_APP_ENV);
 
 export const vars = envSchema.parse({
   ...envDefaults[appEnv],
-  ...process.env,
+  ...import.meta.env,
 });
