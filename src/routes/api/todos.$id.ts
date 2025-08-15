@@ -1,21 +1,9 @@
 import type { Txid } from "@tanstack/electric-db-collection";
 import { json } from "@tanstack/react-start";
 import { createServerFileRoute } from "@tanstack/react-start/server";
-import type { TransactionSql } from "postgres";
 import { sql } from "../../db/postgres";
+import { generateTxId } from "../../db/utils";
 import { validateUpdateTodo } from "../../db/validation";
-
-// Generate a transaction ID
-async function generateTxId(tx: TransactionSql): Promise<Txid> {
-	const result = await tx`SELECT pg_current_xact_id()::xid::text as txid`;
-	const txid = result[0]?.txid;
-
-	if (txid === undefined) {
-		throw new Error("Failed to get transaction ID");
-	}
-
-	return Number.parseInt(txid, 10);
-}
 
 export const ServerRoute = createServerFileRoute("/api/todos/$id").methods({
 	GET: async ({ params }) => {
