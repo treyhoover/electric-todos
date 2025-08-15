@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const appEnvSchema = z.enum(["development", "production"]).default("development");
+const appEnvSchema = z.enum(["development", "production"]).catch("development");
 
 const envSchema = z.object({
   VITE_APP_ENV: appEnvSchema,
@@ -27,9 +27,9 @@ const envDefaults: Record<AppEnv, EnvSchema> = {
   },
 };
 
-const appEnv = appEnvSchema.parse(import.meta.env.VITE_APP_ENV);
+const appEnv = appEnvSchema.parse(process.env.VITE_APP_ENV);
 
 export const vars = envSchema.parse({
   ...envDefaults[appEnv],
-  ...import.meta.env,
+  ...process.env,
 });
