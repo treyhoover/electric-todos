@@ -1,10 +1,9 @@
+import { getSecret } from "@env/secrets";
 import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
 import * as schema from "./schema";
 
-const client = postgres(
-	process.env.DB_URL || "postgresql://postgres:postgres@localhost:54322/todo_app"
-);
+const client = postgres(getSecret("DB_URL"));
 
 export const db = drizzle(client, { schema });
 

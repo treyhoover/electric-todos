@@ -13,6 +13,7 @@ import { createServerRootRoute } from '@tanstack/react-start/server'
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { ServerRoute as ApiTodosServerRouteImport } from './routes/api/todos'
+import { ServerRoute as ApiShapeProxyServerRouteImport } from './routes/api/shape-proxy'
 import { ServerRoute as ApiConfigServerRouteImport } from './routes/api/config'
 import { ServerRoute as ApiTodosIdServerRouteImport } from './routes/api/todos.$id'
 import { ServerRoute as ApiConfigIdServerRouteImport } from './routes/api/config.$id'
@@ -27,6 +28,11 @@ const IndexRoute = IndexRouteImport.update({
 const ApiTodosServerRoute = ApiTodosServerRouteImport.update({
   id: '/api/todos',
   path: '/api/todos',
+  getParentRoute: () => rootServerRouteImport,
+} as any)
+const ApiShapeProxyServerRoute = ApiShapeProxyServerRouteImport.update({
+  id: '/api/shape-proxy',
+  path: '/api/shape-proxy',
   getParentRoute: () => rootServerRouteImport,
 } as any)
 const ApiConfigServerRoute = ApiConfigServerRouteImport.update({
@@ -68,12 +74,14 @@ export interface RootRouteChildren {
 }
 export interface FileServerRoutesByFullPath {
   '/api/config': typeof ApiConfigServerRouteWithChildren
+  '/api/shape-proxy': typeof ApiShapeProxyServerRoute
   '/api/todos': typeof ApiTodosServerRouteWithChildren
   '/api/config/$id': typeof ApiConfigIdServerRoute
   '/api/todos/$id': typeof ApiTodosIdServerRoute
 }
 export interface FileServerRoutesByTo {
   '/api/config': typeof ApiConfigServerRouteWithChildren
+  '/api/shape-proxy': typeof ApiShapeProxyServerRoute
   '/api/todos': typeof ApiTodosServerRouteWithChildren
   '/api/config/$id': typeof ApiConfigIdServerRoute
   '/api/todos/$id': typeof ApiTodosIdServerRoute
@@ -81,18 +89,30 @@ export interface FileServerRoutesByTo {
 export interface FileServerRoutesById {
   __root__: typeof rootServerRouteImport
   '/api/config': typeof ApiConfigServerRouteWithChildren
+  '/api/shape-proxy': typeof ApiShapeProxyServerRoute
   '/api/todos': typeof ApiTodosServerRouteWithChildren
   '/api/config/$id': typeof ApiConfigIdServerRoute
   '/api/todos/$id': typeof ApiTodosIdServerRoute
 }
 export interface FileServerRouteTypes {
   fileServerRoutesByFullPath: FileServerRoutesByFullPath
-  fullPaths: '/api/config' | '/api/todos' | '/api/config/$id' | '/api/todos/$id'
+  fullPaths:
+    | '/api/config'
+    | '/api/shape-proxy'
+    | '/api/todos'
+    | '/api/config/$id'
+    | '/api/todos/$id'
   fileServerRoutesByTo: FileServerRoutesByTo
-  to: '/api/config' | '/api/todos' | '/api/config/$id' | '/api/todos/$id'
+  to:
+    | '/api/config'
+    | '/api/shape-proxy'
+    | '/api/todos'
+    | '/api/config/$id'
+    | '/api/todos/$id'
   id:
     | '__root__'
     | '/api/config'
+    | '/api/shape-proxy'
     | '/api/todos'
     | '/api/config/$id'
     | '/api/todos/$id'
@@ -100,6 +120,7 @@ export interface FileServerRouteTypes {
 }
 export interface RootServerRouteChildren {
   ApiConfigServerRoute: typeof ApiConfigServerRouteWithChildren
+  ApiShapeProxyServerRoute: typeof ApiShapeProxyServerRoute
   ApiTodosServerRoute: typeof ApiTodosServerRouteWithChildren
 }
 
@@ -121,6 +142,13 @@ declare module '@tanstack/react-start/server' {
       path: '/api/todos'
       fullPath: '/api/todos'
       preLoaderRoute: typeof ApiTodosServerRouteImport
+      parentRoute: typeof rootServerRouteImport
+    }
+    '/api/shape-proxy': {
+      id: '/api/shape-proxy'
+      path: '/api/shape-proxy'
+      fullPath: '/api/shape-proxy'
+      preLoaderRoute: typeof ApiShapeProxyServerRouteImport
       parentRoute: typeof rootServerRouteImport
     }
     '/api/config': {
@@ -179,6 +207,7 @@ export const routeTree = rootRouteImport
   ._addFileTypes<FileRouteTypes>()
 const rootServerRouteChildren: RootServerRouteChildren = {
   ApiConfigServerRoute: ApiConfigServerRouteWithChildren,
+  ApiShapeProxyServerRoute: ApiShapeProxyServerRoute,
   ApiTodosServerRoute: ApiTodosServerRouteWithChildren,
 }
 export const serverRouteTree = rootServerRouteImport

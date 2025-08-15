@@ -1,14 +1,17 @@
+import { vars } from "@env/vars";
 import { electricCollectionOptions } from "@tanstack/electric-db-collection";
 import { createCollection } from "@tanstack/react-db";
 import { selectConfigSchema, selectTodoSchema } from "@/db/validation";
 import { api } from "./api";
+
+const shapeUrl = new URL("/api/shape-proxy", vars.VITE_APP_URL).toString();
 
 // Electric Todo Collection
 export const electricTodoCollection = createCollection(
 	electricCollectionOptions({
 		id: "todos",
 		shapeOptions: {
-			url: "http://localhost:3003/v1/shape",
+			url: shapeUrl,
 			params: {
 				table: "todos",
 			},
@@ -62,7 +65,7 @@ export const electricConfigCollection = createCollection(
 	electricCollectionOptions({
 		id: "config",
 		shapeOptions: {
-			url: "http://localhost:3003/v1/shape",
+			url: shapeUrl,
 			params: {
 				table: "config",
 			},

@@ -6,7 +6,8 @@
 		"moduleResolution": "bundler",
 		"jsx": "react-jsx",
 		"paths": {
-			"@/*": ["./src/*"]
+			"@/*": ["./src/*"],
+			"@env/*": ["./env/*"]
 		}
 	},
 	"include": [
@@ -15,7 +16,8 @@
 		"scripts/**/*.ts",
 		"vite.config.ts",
 		"drizzle.config.ts",
-		"app.config.ts"
+		"app.config.ts",
+		"env/*.ts"
 	],
 	"exclude": ["node_modules", "dist"]
 }

@@ -1,3 +1,4 @@
+import { getSecret } from "@env/secrets";
 import * as dotenv from "dotenv";
 import { drizzle } from "drizzle-orm/node-postgres";
 import { migrate } from "drizzle-orm/node-postgres/migrator";
@@ -7,7 +8,7 @@ dotenv.config();
 
 const { Pool } = pkg;
 const pool = new Pool({
-	connectionString: process.env.DB_URL || "postgresql://postgres:postgres@localhost:54322/todo_app",
+	connectionString: getSecret("DB_URL"),
 });
 
 const db = drizzle(pool);
